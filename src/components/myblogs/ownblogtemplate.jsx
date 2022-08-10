@@ -1,6 +1,8 @@
 import { Box, Flex, Heading ,Image,Text,Link,Container} from "@chakra-ui/react";
 
 const Ownbloglist = ({data}) => {
+
+    console.log(data,"mybogs")
     return (
       <Container maxW={'7xl'} p="12" >
         
@@ -70,6 +72,7 @@ const Ownbloglist = ({data}) => {
   export default Ownbloglist
 
   export const BlogAuthor= (props) => {
+    
     return (
       <Flex  mt="2" gap={"10px"} alignItems="center" >
         <Image

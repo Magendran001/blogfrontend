@@ -59,22 +59,30 @@ const PostBlog = (blogdata, config) => (dispatch) => {
 
     dispatch(POSTBLOGREQ())
 
-    axios.post("http://localhost:4329/blog", blogdata, config)
+    axios.post("https://blogreduxbackend.herokuapp.com/blog", blogdata, config)
         .then(res => {
-            console.log(res);
-            dispatch(POSTBLOGSUCCESS())
+            console.log(res, "res");
+            if (res?.data?.message) {
+                dispatch(POSTBLOGERROR())
+                alert(res.data.message?.message)
+
+            }
+            else {
+                dispatch(POSTBLOGSUCCESS())
+            }
+
         })
         .catch(err => {
 
             console.log(err);
             if (err?.response?.data?.message) {
-
+                dispatch(POSTBLOGERROR())
                 alert(err.response.data.message)
 
             }
 
 
-            dispatch(POSTBLOGERROR())
+
         })
 
 

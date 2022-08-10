@@ -50,9 +50,9 @@ function Regeister()
         <FormLabel>First Name</FormLabel>
         <Input type={"text"} placeholder='First Name' name="firstname"  onChange={signuphandler} />
       </FormControl>
-      <FormControl >
+      <FormControl isRequired >
         
-        <FormLabel>Last Name</FormLabel>
+        <FormLabel >Last Name</FormLabel>
         <Input type={"text"} placeholder='Last Name' name="lastname"  onChange={signuphandler} />
       </FormControl>
     <FormControl isRequired>

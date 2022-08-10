@@ -48,7 +48,7 @@ const Loginpostdata = (loginobj) => (dispatch) => {
 
     dispatch(POSTLOGINREQ())
 
-    axios.post("http://localhost:4329/login", loginobj)
+    axios.post("https://blogreduxbackend.herokuapp.com/login", loginobj)
         .then(res => {
             console.log(res)
             dispatch(POSTLOGINSUCCESS(res.data))

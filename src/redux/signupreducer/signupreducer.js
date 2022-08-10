@@ -15,7 +15,7 @@ const Signupreducer = (state = init, { type, payload }) => {
             return { ...state, isloading: false, error: false, done_newuser: true }
 
         case signupaction.REGEISTERERROR:
-            return { ...state, error: true, errormessage: payload }
+            return { ...state, error: true, errormessage: payload, isloading: false }
 
         case loginaction.LOGOUTMENTION:
             return { ...state, error: false, done_newuser: false }

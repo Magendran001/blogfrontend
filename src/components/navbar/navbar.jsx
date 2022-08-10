@@ -35,7 +35,7 @@ function Navbar()
                
              </Flex>
              <Box>
-               {isAuth?<Logout/>: <Button><Link to="/login">Login</Link></Button>}
+               {isAuth?<Logout/>: <Link to="/login"><Button>Login</Button></Link>}
              </Box>
          </Center>
     </>)

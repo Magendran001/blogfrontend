@@ -37,7 +37,7 @@ const ADMINDATAERROR = () => {
 const ADMINGETDATA = (config) => (dispatch) => {
     dispatch(ADMINDATAREQ())
 
-    axios.get("http://localhost:4329/admin/allusers", config)
+    axios.get("https://blogreduxbackend.herokuapp.com/admin/allusers", config)
         .then(res => dispatch(ADMINDATASUCCESS(res.data)))
         .catch(err => dispatch(ADMINDATAERROR()))
 
@@ -48,7 +48,7 @@ const Blockuser = (id, config) => (dispatch) => {
 
     dispatch(BLOCKREQ())
 
-    axios.patch(`http://localhost:4329/admin/blockuser/${id}`, {}, config)
+    axios.patch(`https://blogreduxbackend.herokuapp.com/admin/blockuser/${id}`, {}, config)
         .then(res => {
             dispatch(BLOCKSUCCESS(res.data))
 

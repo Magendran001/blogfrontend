@@ -30,7 +30,7 @@ const Publicblogdata = () => (dispatch) => {
 
     dispatch(PUBLICBLOGREQ())
 
-    axios.get("http://localhost:4329/blog")
+    axios.get("https://blogreduxbackend.herokuapp.com/blog")
         .then(res => {
             console.log(res)
             dispatch(PUBLICBLOGSUCCESS(res.data))

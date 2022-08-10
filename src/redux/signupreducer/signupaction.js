@@ -23,7 +23,7 @@ const SIGNUPPOST = (signupobj) => (dispatch) => {
 
     dispatch(SIGNUPREQUEST())
 
-    axios.post("http://localhost:4329/signup", signupobj)
+    axios.post("https://blogreduxbackend.herokuapp.com/signup", signupobj)
         .then(res => {
 
 
@@ -41,8 +41,17 @@ const SIGNUPPOST = (signupobj) => (dispatch) => {
             dispatch(Loginpostdata({ email: res.data?.user?.email, password: res.data?.user?.password }))
         })
         .catch(err => {
-            console.log(err);
+
+            if (err?.response?.data?.message) {
+
+                console.log(err, "signuop");
+                console.log(err.response?.data?.message)
+                alert(err.response?.data?.message)
+
+
+            }
             dispatch(SIGNUPERROR())
+
         })
 
 

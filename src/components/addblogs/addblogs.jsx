@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Spinnerload from "../spinner/spinner";
 import { PostBlog } from "../../redux/ownblogs/ownblogaction";
+import ToastExample from "../toast/toast";
 
 
 function Addblogs(){
@@ -12,7 +13,14 @@ function Addblogs(){
     let dispatch = useDispatch();
     let userdetails  = useSelector(state=>state.loginreducer.userdetails);
     let isloading = useSelector(state=>state.ownblogreducer.isloading);
-    console.log(isloading,"isloading")
+    
+
+   
+    
+
+   
+    
+
     let [blogdata,setblogdata] = useState({});
 
     
@@ -60,6 +68,7 @@ function Addblogs(){
  
  </Grid>
  { isloading&&<Spinnerload/>}
+ 
  </>)
 }
 
