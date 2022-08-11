@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import { ADMINGETDATA } from "../../redux/adminreducer/adminaction";
 import { Loginpostdata } from "../../redux/loginreducer/loginaction";
 import Fetchblogbyid from "../../redux/ownblogs/ownblogaction";
+import { Publicblogdata } from "../../redux/publicblogreducer/publicblogaction";
 import Logout from "../login/logout";
 
 
@@ -36,6 +37,7 @@ function Navbar()
 
        
     useEffect(()=>{
+       dispatch(Publicblogdata())
           dispatch(ADMINGETDATA(config))
   },[])
 
@@ -45,7 +47,7 @@ function Navbar()
     {
         dispatch(Fetchblogbyid(config,id))
     }
-},[isAuth,id])
+},[])
   
     return (<>
          <Center justifyContent={"space-between"} p="20px" bgColor={"blue.200"}>
