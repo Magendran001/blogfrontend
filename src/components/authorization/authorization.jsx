@@ -6,9 +6,9 @@ function Authorization({children})
 
     let dispatch = useDispatch();
     let admin = useSelector(state=>state.loginreducer.userdetails?.user?.role);
-    // console.log(admin,"admins")
+   
     let isAuth = useSelector(state=>state.loginreducer.isAuth);
-    // console.log(isAuth,"authorization")
+   
 
     if(!isAuth)
     {

@@ -22,26 +22,7 @@ function Myblogs()
 
     // console.log(data,"userdetails")
       
-    useEffect(()=>{
-
-        let config = {
-            headers:{
-                Authorization:'Bearer ' + userdetails?.token,
-            }
-        }
-
-        // console.log(config,"config")
-        if(isAuth)
-        {
-            dispatch(Fetchblogbyid(config,id))
-        }
-
-      
-        
-
-
-
-    },[isAuth,id])
+   
 
     return (<Box w="80%" m="30px auto">
                {data?.length?data.map(e=><Ownbloglist data={e} />):<h1>Empty Blog Post</h1>}

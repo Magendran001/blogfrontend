@@ -2,7 +2,9 @@ import { Center ,Box, Flex, Button} from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {Link} from "react-router-dom";
+import { ADMINGETDATA } from "../../redux/adminreducer/adminaction";
 import { Loginpostdata } from "../../redux/loginreducer/loginaction";
+import Fetchblogbyid from "../../redux/ownblogs/ownblogaction";
 import Logout from "../login/logout";
 
 
@@ -11,10 +13,18 @@ function Navbar()
 {
    let dispatch = useDispatch();
     let isAuth = useSelector(state=>state.loginreducer.isAuth);
-    // console.log(isAuth,"selector")
+    
 
-    let token = useSelector(state=>state.loginreducer.token)
-    // console.log(token)
+    let token = useSelector(state=>state.loginreducer.token);
+    let userdetails = useSelector(state=>state.loginreducer.userdetails);
+    let id = userdetails?.user?._id;
+
+    let config = {
+      headers:{
+          Authorization:"Bearer"+" "+userdetails?.token,
+      }
+  }
+    
 
       useEffect(()=>{
         if(token?.token)
@@ -24,6 +34,18 @@ function Navbar()
 
       },[token])
 
+       
+    useEffect(()=>{
+          dispatch(ADMINGETDATA(config))
+  },[])
+
+  useEffect(()=>{
+
+    if(isAuth)
+    {
+        dispatch(Fetchblogbyid(config,id))
+    }
+},[isAuth,id])
   
     return (<>
          <Center justifyContent={"space-between"} p="20px" bgColor={"blue.200"}>
