@@ -38,7 +38,7 @@ const Fetchblogbyid = (config, id) => (dispatch) => {
 
 
     dispatch(OWNBLOGREQ())
-    axios.get(`http://localhost:4329/blog/${id}`, config)
+    axios.get(`https://blogreduxbackend.herokuapp.com/${id}`, config)
         .then(res => {
 
 
