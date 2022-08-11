@@ -18,16 +18,16 @@ function Home()
            <h1>Hi,{userdetails?.firstname}
           </h1>
 
-           <Center gap={"30px"}>
+           <Center gap={"30px"} flexDirection={{base:"column",sm:"row"}}>
           <Link to="/myblogs">
           
-             <Image w="400px" h="400px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR5fIaKBcBnD5Ej1o7QQ53-2-dDsTHGW467A&usqp=CAU"/>
+             <Image w={{base:"200px",sm:"400px"}} h={{base:"200px",sm:"400px"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR5fIaKBcBnD5Ej1o7QQ53-2-dDsTHGW467A&usqp=CAU"/>
              <Heading>My BLogs</Heading>
              </Link>
               <Link to="/addblogs">
             
              
-             <Image w="400px" h="400px"  src="https://image.shutterstock.com/image-photo/blogging-concept-top-view-text-260nw-1496752340.jpg"/>
+             <Image w={{base:"200px",sm:"400px"}} h={{base:"200px",sm:"400px"}} src="https://image.shutterstock.com/image-photo/blogging-concept-top-view-text-260nw-1496752340.jpg"/>
              <Heading>Post New Blog</Heading>
              </Link>
 

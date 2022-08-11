@@ -34,7 +34,7 @@ function Adminpage(){
     return (
           
          <Grid w="60%" m="30px auto" gap={30}>
-            {data.length!=0&& data.map(e=> <Flex gap={"100px"}>
+            {data.length!=0&& data.map(e=> <Flex gap={"10px"} flexDirection={{base:"column",sm:"row"}}>
                 <Box>
                 <Image w="100px" src="https://www.nicepng.com/png/detail/933-9332131_profile-picture-default-png.png"/>
                 <Text >{e.firstname}</Text>

@@ -44,7 +44,7 @@ function Regeister()
        
 
     },[redirect])
-    return ( <><Grid w="500px" m="30px auto" gap={"20px"}>
+    return ( <><Grid w={{base:"300px",md:"500px"}} m="30px auto" gap={"20px"}>
          <FormControl isRequired>
         
         <FormLabel>First Name</FormLabel>

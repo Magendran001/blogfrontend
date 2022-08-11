@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Toastactive, Toastinactive } from "../toast/action";
 const ownblogaction = {
 
     OWNBLOGREQ: "OWNBLOGREQ",
@@ -38,7 +39,9 @@ const Fetchblogbyid = (config, id) => (dispatch) => {
 
 
     dispatch(OWNBLOGREQ())
-    axios.get(`https://blogreduxbackend.herokuapp.com/${id}`, config)
+
+    axios.get(`https://blogreduxbackend.herokuapp.com/blog/${id}`, config)
+ 
         .then(res => {
 
 
@@ -71,6 +74,14 @@ const PostBlog = (blogdata, config) => (dispatch) => {
                 dispatch(POSTBLOGSUCCESS())
             }
 
+        })
+        .then((res) => {
+
+            dispatch(Toastactive())
+        })
+        .then((res) => {
+
+            dispatch(Toastinactive())
         })
         .catch(err => {
 
