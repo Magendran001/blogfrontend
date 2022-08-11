@@ -12,20 +12,24 @@ function Adminpage(){
 
     let isloading = useSelector(state=>state.adminreducer.isloading)
     console.log(data,"datassssss")
-   
+    let config = {
+        headers:{
+            Authorization:'Bearer ' + userdetails?.token,
+        }
+     }
 
      let dispatch = useDispatch();
 
-    
+     useEffect(()=>{
+        
+          dispatch(ADMINGETDATA(config))
+        
+      },[])
 
     const Blocksubmit = (id)=>{
 
              console.log(id,"id")
-             let config = {
-                headers:{
-                    Authorization:'Bearer ' + userdetails?.token,
-                }
-             }
+            
 
              dispatch(Blockuser(id,config))
        

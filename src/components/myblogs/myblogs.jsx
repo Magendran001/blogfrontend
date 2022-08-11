@@ -23,9 +23,21 @@ function Myblogs()
     
     
     let data  = useSelector(state=>state.ownblogreducer?.data);
+    let config = {
+        headers:{
+            Authorization:'Bearer ' + userdetails?.token,
+        }
+     }
 
     // console.log(data,"userdetails")
-      
+    useEffect(()=>{
+
+        if(isAuth)
+        {
+            dispatch(Fetchblogbyid(config,id))
+            
+        }
+    },[isAuth,id])
    
 
     return (

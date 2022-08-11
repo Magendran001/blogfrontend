@@ -35,10 +35,11 @@ function Navbar()
 
       },[token])
 
+      
        
     useEffect(()=>{
        dispatch(Publicblogdata())
-          dispatch(ADMINGETDATA(config))
+          
   },[])
 
   useEffect(()=>{
@@ -46,8 +47,11 @@ function Navbar()
     if(isAuth)
     {
         dispatch(Fetchblogbyid(config,id))
+        
     }
-},[])
+},[isAuth,id])
+
+
   
     return (<>
          <Center justifyContent={"space-between"} p="20px" bgColor={"blue.200"}>

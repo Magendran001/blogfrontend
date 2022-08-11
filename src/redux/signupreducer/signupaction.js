@@ -1,5 +1,6 @@
 import { Loginpostdata } from "../loginreducer/loginaction"
 import axios from "axios"
+import { Toastactive, Toastinactive } from "../toast/action"
 const signupaction = {
 
     REGEISTERREQ: "REGEISTERREQ",
@@ -40,6 +41,7 @@ const SIGNUPPOST = (signupobj) => (dispatch) => {
             console.log(res, "2")
             dispatch(Loginpostdata({ email: res.data?.user?.email, password: res.data?.user?.password }))
         })
+
         .catch(err => {
 
             if (err?.response?.data?.message) {
