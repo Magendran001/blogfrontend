@@ -1,15 +1,16 @@
 import { useToast,Button,Box } from "@chakra-ui/react"
 
-function ToastExample() {
+           
+function Toast({title,description,status}) {
     const toast = useToast()
     return (
       
         
           toast({
             position: 'top',
-            title: 'Account created.',
-            description: "We've created your account for you.",
-            status: 'error',
+            title,
+            description,
+            status,
             duration: 9000,
             isClosable: true,
 
@@ -21,7 +22,7 @@ function ToastExample() {
     )
   }
 
-  export default ToastExample
+  export default Toast
 //   function ToastExample({title,description,status}) {
 //     const toast = useToast()
 //     return (

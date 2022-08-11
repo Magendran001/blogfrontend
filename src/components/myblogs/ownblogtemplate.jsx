@@ -1,6 +1,8 @@
 import { Box, Flex, Heading ,Image,Text,Link,Container} from "@chakra-ui/react";
 
+
 const Ownbloglist = ({data}) => {
+
 
     console.log(data,"mybogs")
     return (

@@ -1,5 +1,6 @@
 
 import axios from "axios";
+import { Toastactive, Toastinactive } from "../toast/action";
 
 const loginaction = {
     LOGINREQUEST: "LOGINREQUEST",
@@ -55,6 +56,14 @@ const Loginpostdata = (loginobj) => (dispatch) => {
 
 
         })
+        .then((res) => {
+
+            dispatch(Toastactive())
+        })
+        .then((res) => {
+
+            dispatch(Toastinactive())
+        })
 
         .catch(err => {
 
@@ -65,7 +74,7 @@ const Loginpostdata = (loginobj) => (dispatch) => {
                 dispatch(POSTLOGINERROR())
             }
 
-            
+
         })
 
 

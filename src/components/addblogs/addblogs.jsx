@@ -1,4 +1,4 @@
-import { Center, FormControl, FormLabel, Grid, Input,Box, Button,Text } from "@chakra-ui/react"
+import { Center, FormControl, FormLabel, Grid, Input,Box, Button,Text, Toast } from "@chakra-ui/react"
 import axios from "axios"
 import { useState } from "react";
 import { useEffect } from "react";
@@ -6,12 +6,14 @@ import { useDispatch, useSelector } from "react-redux";
 import Spinnerload from "../spinner/spinner";
 import { PostBlog } from "../../redux/ownblogs/ownblogaction";
 import ToastExample from "../toast/toast";
+import { toast } from "../../redux/toast/action";
 
 
 function Addblogs(){
  
     let dispatch = useDispatch();
     let userdetails  = useSelector(state=>state.loginreducer.userdetails);
+    let toastauth = useSelector(state=>state.toastreducer.active);
     let isloading = useSelector(state=>state.ownblogreducer.isloading);
     
 
@@ -45,7 +47,7 @@ function Addblogs(){
        
     }
     
-    return (<><Grid w="500px" m="30px auto" gap={"20px"}>
+    return (<><Grid w={{base:"300px",sm:"500px"}} m="30px auto" gap={"20px"}>
     <FormControl isRequired>
    
    <FormLabel>Title</FormLabel>
@@ -68,6 +70,7 @@ function Addblogs(){
  
  </Grid>
  { isloading&&<Spinnerload/>}
+  {toastauth&&<ToastExample title="Blog Posted Successfully"  status  ="success" />}
  
  </>)
 }

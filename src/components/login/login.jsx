@@ -2,7 +2,9 @@ import { Center, FormControl, FormLabel, Grid, Input,Box, Button,Text, Spinner }
 import { useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux/es/exports";
+import Toast from "../toast/toast";
 import { Loginpostdata } from "../../redux/loginreducer/loginaction";
+
 import { POSTLOGINERROR,POSTLOGINSUCCESS,POSTLOGINREQ} from "../../redux/loginreducer/loginaction";
 
 import Logout from "./logout";
@@ -20,7 +22,9 @@ function Login()
     let selector = useSelector(state=>state);
     let isAuth = useSelector(state=>state.loginreducer.isAuth);
     let isloading = useSelector(state=>state.loginreducer.isloading);
-    console.log(isloading,"isloading")
+    let username = useSelector(state=>state.loginreducer.userdetails?.user?.firstname);
+    let toastauth = useSelector(state=>state.toastreducer.active);
+    console.log(username,"isloading")
     
     
     let [loginobj,setloginobj] = useState({});
@@ -59,7 +63,7 @@ function Login()
 
     return (
         <Box>
-     <Grid w="500px" m="30px auto"  gap={"20px"}>
+     <Grid w={{base:"300px",md:"500px"}} m="30px auto"  gap={"20px"}>
     <FormControl isRequired>
         <FormLabel>Email</FormLabel>
         <Input placeholder='Email' name="email"  onChange={Loginhandler} />
@@ -76,6 +80,7 @@ function Login()
       
       </Grid>
        {isloading&& <Spinnerload/>}
+       {toastauth&&<Toast title= {`Welcome ${username}`} status  ="success" />}
       </Box>)
 }
 

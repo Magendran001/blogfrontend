@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Toastactive, Toastinactive } from "../toast/action";
 const ownblogaction = {
 
     OWNBLOGREQ: "OWNBLOGREQ",
@@ -71,6 +72,14 @@ const PostBlog = (blogdata, config) => (dispatch) => {
                 dispatch(POSTBLOGSUCCESS())
             }
 
+        })
+        .then((res) => {
+
+            dispatch(Toastactive())
+        })
+        .then((res) => {
+
+            dispatch(Toastinactive())
         })
         .catch(err => {
 

@@ -6,13 +6,16 @@ import { useDispatch, useSelector } from "react-redux";
 import Fetchblogbyid from "../../redux/ownblogs/ownblogaction";
 import Spinnerload from "../spinner/spinner";
 import Ownbloglist from "./ownblogtemplate";
+import Toast from "../toast/toast";
 
 function Myblogs()
 {
     let dispatch = useDispatch();
     let userdetails  = useSelector(state=>state.loginreducer.userdetails);
+    let toastauth = useSelector(state=>state.toastreducer.active);
+    console.log(toastauth,"toastauth")
     let id = userdetails?.user?._id;
-    let isloading = useSelector(state=>state.loginreducer.isloading);
+    let isloading = useSelector(state=>state.ownblogreducer.isloading);
     console.log(userdetails?.user?._id,"iddss")
     let isAuth  = useSelector(state=>state.loginreducer.isAuth)
   
@@ -53,7 +56,9 @@ function Myblogs()
                
                
                
-    </Box>}</Box>
+    </Box>}
+    
+    </Box>
     )
 }
 

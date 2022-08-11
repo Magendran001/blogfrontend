@@ -5,8 +5,9 @@ import Publicblogreducer from './publicblogreducer/publicblogreducer';
 import ownblogreducer from './ownblogs/ownblogreducer';
 import thunk from 'redux-thunk';
 import adminreducer from './adminreducer/adminreducer';
+import toastreducer from './toast/toastreducer';
 
-const rootreducer = combineReducers({ loginreducer, Signupreducer, Publicblogreducer, ownblogreducer, adminreducer })
+const rootreducer = combineReducers({ loginreducer, Signupreducer, Publicblogreducer, ownblogreducer, adminreducer, toastreducer })
 
 // const customthunk = (store) => (next) => (action) => {
 
