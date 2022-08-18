@@ -29,7 +29,18 @@ function Home()
              
              <Image w={{base:"200px",sm:"400px"}} h={{base:"200px",sm:"400px"}} src="https://image.shutterstock.com/image-photo/blogging-concept-top-view-text-260nw-1496752340.jpg"/>
              <Heading>Post New Blog</Heading>
+
+
              </Link>
+             <Link to="/publicblogs">
+            
+             
+            <Image w={{base:"200px",sm:"400px"}} h={{base:"200px",sm:"400px"}} src="https://ripplethemes.com/wp-content/uploads/edd/2021/02/public-preview.jpg"/>
+            <Heading>Public Blog</Heading>
+
+
+            </Link>
+
 
              </Center>
 
