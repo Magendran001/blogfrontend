@@ -16,13 +16,13 @@ function Adminpage(){
     let data = useSelector(state=>state.adminreducer?.data)
     let toastauth = useSelector(state=>state.toastreducer.active);
 
-<<<<<<< HEAD
+
     let isloading = useSelector(state=>state.adminreducer.isloading)
-=======
+
     let adminreducer = useSelector(state=>state.adminreducer.isloading);
 
     let [blockspinner,setblockspinner] = useState(false)
->>>>>>> 6b8569b0aa17df9cf599263002d390e9d86c6beb
+
     console.log(data,"datassssss")
     let config = {
         headers:{
@@ -32,9 +32,9 @@ function Adminpage(){
 
      let dispatch = useDispatch();
 
-<<<<<<< HEAD
-     useEffect(()=>{
-=======
+
+     
+
 
      useEffect(()=>{
            
@@ -55,9 +55,9 @@ function Adminpage(){
         }
 
        
-            dispatch(ADMINGETDATA(config))
+           
          
->>>>>>> 6b8569b0aa17df9cf599263002d390e9d86c6beb
+
         
           dispatch(ADMINGETDATA(config))
         

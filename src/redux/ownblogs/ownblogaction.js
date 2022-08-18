@@ -65,14 +65,9 @@ const PostBlog = (blogdata, config) => (dispatch) => {
     axios.post("https://blogreduxbackend.herokuapp.com/blog", blogdata, config)
         .then(res => {
             console.log(res, "res");
-            if (res?.data?.message) {
-                dispatch(POSTBLOGERROR())
-                alert(res.data.message?.message)
 
-            }
-            else {
-                dispatch(POSTBLOGSUCCESS())
-            }
+            dispatch(POSTBLOGSUCCESS())
+
 
         })
         .then((res) => {
@@ -88,7 +83,7 @@ const PostBlog = (blogdata, config) => (dispatch) => {
             console.log(err);
             if (err?.response?.data?.message) {
                 dispatch(POSTBLOGERROR())
-                alert(err.response.data.message)
+                alert("Enter Valid data to post your Blog")
 
             }
 

@@ -74,7 +74,7 @@ function Login()
         <Input placeholder='password' name="password"  onChange={Loginhandler}/>
       </FormControl>
       <Box>
-        if you are  new user? click here to <Text as={"span"} color={"blue"}><Link to="/regeister">Regeister</Link></Text> 
+        if you are  new user? click here to <Text as={"span"} color={"blue"}><Link to="/regeister">Register</Link></Text> 
       </Box>
       <Button bg={"teal"} color="white" onClick={Submithandler}>Submit</Button>
       
