@@ -12,6 +12,7 @@ import Logout from "./logout";
 import axios from "axios"
 import { useEffect } from "react";
 import Spinnerload from "../spinner/spinner";
+import Googleauthentication from "../googleauthentication/authentication";
 
 function Login()
 {
@@ -81,7 +82,8 @@ function Login()
       </Grid>
        {isloading&& <Spinnerload/>}
        {toastauth&&<Toast title= {`Welcome ${username}`} status  ="success" />}
+       <Googleauthentication/>
       </Box>)
-}
+} 
 
 export default Login
